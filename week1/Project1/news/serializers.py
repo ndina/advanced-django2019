@@ -13,7 +13,6 @@ class StuffListSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(required=True)
 
-
     def create(self, validated_data):
         taskList = Stuff(**validated_data)
         taskList.save()

@@ -5,14 +5,20 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Stuff(models.Model):
+    """
+        Generic model for stuff category
+    """
     name = models.CharField(max_length=100)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=2)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return '{}: {}'.format(self.id, self.name)
 
 
 class StuffStockDetails(models.Model):
+    """
+        Generic model for each stuff
+    """
     name = models.CharField(max_length=200)
     created_at = models.DateTimeField()
     due_on = models.DateTimeField()
