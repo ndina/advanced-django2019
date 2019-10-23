@@ -57,7 +57,6 @@ class TaskBaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ('id', 'creator', 'task')
-        abstract = True
 
 
 class TaskDocumentSerializer(serializers.Serializer):
